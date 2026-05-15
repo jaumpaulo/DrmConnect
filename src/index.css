@@ -125,5 +125,5 @@ code {
   align-items: center;
   flex-direction: column;
   padding: 5px;
-  border: 2px solid yellow;
+  border: 2px solid rgb(43, 255, 0);
 }
