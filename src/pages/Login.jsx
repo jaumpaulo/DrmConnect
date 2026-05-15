@@ -22,7 +22,7 @@ export default function Login(){
         const { error } = await supabase.auth.signInWithOAuth({
         provider: "google",
         options: {
-            redirectTo: `${window.location.origin}/Home`,
+            redirectTo: `htpps://problemas.vercel.app/Home`,
             queryParams: {
             access_type: 'offline',
             prompt: 'consent',
