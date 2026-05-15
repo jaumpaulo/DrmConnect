@@ -5,7 +5,6 @@ import Login from "./pages/login";
 import Cadastro from "./pages/Cadastro";
 import PrivateRoute from "./components/hooks/PrivateRouter";
 import ProblemasPagina from "./pages/ProblemasPagina";
-
 export default function App(){
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true); // Adicionado para controlar o carregamento inicial
