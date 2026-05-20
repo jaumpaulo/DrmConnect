@@ -3,12 +3,14 @@ import { supabase } from "../supabase/supabase";
 import Problemas from "../components/Problemas";
 import RespostasProblemas from "../components/RespostasProblemas";
 import { envImagensStorage } from "../services/uploadImages";
+import { useNavigate } from "react-router-dom";
 
 export default function ProblemasPagina(){
   const [ problemas, setProblemas ] = useState([])
   const [ titulo, setTitulo ] = useState("")
   const [ descricao, setDescricao ] = useState("")
   const [ img, setImg ] = useState(null)
+  const irPara = useNavigate()
 
    async function buscarProblemas(){
     const res = await supabase
@@ -40,7 +42,8 @@ export default function ProblemasPagina(){
         alert("usuário não logado!!")
         return
       }
-      const usuarioNome = user.user_metadata?.full_name || user.user_metadata?.name ||  user.user_metadata?.display_name || "???" 
+      const usuarioNome = user.user_metadata?.full_name || user.user_metadata?.name ||  user.user_metadata?.display_name || "???"
+      const avatar = user.user_metadata?.avatar_url || "sem foto" 
       const res = await supabase
       .from('problemas')
       .insert({
@@ -48,11 +51,14 @@ export default function ProblemasPagina(){
         titulo,
         description: descricao,
         imagens: imgUrlLocal,
-        id_user: user.id
+        id_user: user.id,
+        avatar
       })
       buscarProblemas()
       alert("problema enviado!")
       setImg(null)
+      setTitulo("")
+      setDescricao("")
   }catch(error){
     console.error(error)
   }}
@@ -65,10 +71,11 @@ export default function ProblemasPagina(){
     <div>
       <h1>Bem-vindo aos problemas.com</h1>
       <p>encontre a solução aq!!!!</p>
+      <button onClick={() => irPara("/home/seuUser")}>Editar perfil</button>
       <button onClick={() => desFazerLogin()}>Logout</button>
       <div>
-        <input type="text" onChange={e => setTitulo(e.target.value)} placeholder="Titulo"/> <br />
-        <textarea onChange={e => setDescricao(e.target.value)} placeholder="Descrição do Problema"></textarea> <br />
+        <input type="text" value={titulo} onChange={e => setTitulo(e.target.value)} placeholder="Titulo"/> <br />
+        <textarea value={descricao} onChange={e => setDescricao(e.target.value)} placeholder="Descrição do Problema"></textarea> <br />
         <span>para colocar imagens, baixe e clique no botão abaixo</span> <br />
         <input type="file" accept="image/png,image/jpeg" onChange={e => setImg(e.target.files[0])} /><br />  
         <button onClick={criarProblema}>postar</button>
@@ -76,7 +83,7 @@ export default function ProblemasPagina(){
 
       {problemas.map((item, index) =>(
         <div key={index} className="perguntas">
-        <Problemas user={item.user} titulo={item.titulo} conteudo={item.description} imgs={item.imagens}/> <br />
+        <Problemas user={item.user} titulo={item.titulo} conteudo={item.description} imgs={item.imagens} avatar={item.avatar}/> <br />
         <RespostasProblemas id={item.id} /> 
         </div>
       ))}

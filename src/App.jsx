@@ -5,6 +5,7 @@ import Login from "./pages/login";
 import Cadastro from "./pages/Cadastro";
 import PrivateRoute from "./components/hooks/PrivateRouter";
 import ProblemasPagina from "./pages/ProblemasPagina";
+import PaginaDeUsuario from "./pages/paginaDeUsuario";
 
 export default function App(){
   const [user, setUser] = useState(null);
@@ -46,7 +47,7 @@ export default function App(){
         <Route path="/" element={<Login />} />
         <Route path="/cadastro" element={<Cadastro />} />
         <Route 
-          path="/Home" 
+          path="/home" 
           element={
             // Passamos o loading para o PrivateRoute não barrar o usuário antes da hora
             <PrivateRoute user={user} loading={loading}>
@@ -54,6 +55,11 @@ export default function App(){
             </PrivateRoute>
           } 
         />
+        <Route path="/home/seuUser" element={
+          <PrivateRoute user={user} loading={loading}>
+            <PaginaDeUsuario />
+          </PrivateRoute>
+        }/>
       </Routes>
     </BrowserRouter>
   );

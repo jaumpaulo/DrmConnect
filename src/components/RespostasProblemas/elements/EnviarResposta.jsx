@@ -21,11 +21,12 @@ export default function EnviarResposta({ id, novaRes }){
         } else{
             alert("deu bom")
             novaRes()
+            setDescription('')
         }
     }
     return(
         <>
-        <input type="text" onChange={e => setDescription(e.target.value)}/>
+        <input type="text" value={description} onChange={e => setDescription(e.target.value)}/>
         <button onClick={() => responderProblemas()}>Enviar</button>
         </>
     )
