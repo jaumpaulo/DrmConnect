@@ -6,6 +6,7 @@ import Cadastro from "./pages/Cadastro";
 import PrivateRoute from "./components/hooks/PrivateRouter";
 import ProblemasPagina from "./pages/ProblemasPagina";
 import PaginaDeUsuario from "./pages/PaginaDeUsuario";
+import FeedBack from "./pages/FeedBack";
 
 export default function App(){
   const [user, setUser] = useState(null);
@@ -59,6 +60,11 @@ export default function App(){
         <Route path="/home/seuUser" element={
           <PrivateRoute user={user} loading={loading}>
             <PaginaDeUsuario />
+          </PrivateRoute>
+        }/>
+        <Route path="/feedback" element={
+          <PrivateRoute user={user} loading={loading}>
+            <FeedBack />
           </PrivateRoute>
         }/>
       </Routes>

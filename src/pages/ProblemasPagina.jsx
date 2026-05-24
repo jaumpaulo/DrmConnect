@@ -72,6 +72,7 @@ export default function ProblemasPagina(){
       <h1>Bem-vindo aos problemas.com</h1>
       <p>encontre a solução aq!!!!</p>
       <button onClick={() => irPara("/home/seuUser")}>Editar perfil</button>
+      <button onClick={() => irPara("/feedback")}>Feedback</button>
       <button onClick={() => desFazerLogin()}>Logout</button>
       <div>
         <input type="text" value={titulo} onChange={e => setTitulo(e.target.value)} placeholder="Titulo"/> <br />

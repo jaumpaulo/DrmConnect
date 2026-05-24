@@ -1,0 +1,26 @@
+/* estilo para transforma a checkBox em estrela */
+.estrela-checkbox {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+
+.estrela-label {
+  font-size: 50px;
+  color: #ccc;
+  cursor: pointer;
+  transition: color 0.2s ease, transform 0.1s ease;
+  display: inline-block;
+}
+
+.estrela-label:hover {
+  transform: scale(1.1);
+  color: #ffdb58;
+}
+
+.estrela-checkbox:checked + .estrela-label {
+  color: #ffc107;
+  text-shadow: 0 0 10px rgba(255, 193, 7, 0.5);
+}
