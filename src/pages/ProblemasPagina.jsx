@@ -16,6 +16,7 @@ export default function ProblemasPagina(){
     const res = await supabase
     .from('problemas')
     .select('*')
+    .order('create_at', {ascending: false})
 
     if(res.error){
       alert("olha o console")
