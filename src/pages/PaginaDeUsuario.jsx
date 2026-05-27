@@ -40,7 +40,7 @@ export default function PaginaDeUsuario(){
         <div>
             <img src={urlImg} /> <br />
             {!mudarNome ? <span><h1>{nome}</h1></span> : <input type="text" value={nome} onChange={e => setNome(e.target.value)}/>}
-            {!mudarNome ? <button onClick={() => setMudarNome(true)}>Editar nome</button> : <button onClick={() => mudarNomeDeUsuario()}>Alterar</button>}
+            {!mudarNome ? <button onClick={() => setMudarNome(true)}>Editar</button> : <button onClick={() => mudarNomeDeUsuario()}>Alterar</button>}
        </div>
     )
 }
