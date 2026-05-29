@@ -10,6 +10,7 @@ import FeedBack from "./pages/FeedBack";
 import ResetSenha from "./pages/ResetSenha";
 import PerguntaClicada from "./pages/PerguntaClicada";
 import AjudaDrm from "./pages/AjudaDrm";
+import CriarPergunta from "./pages/CriarPergunta";
 
 export default function App(){
   const [user, setUser] = useState(null);
@@ -80,6 +81,11 @@ export default function App(){
             <AjudaDrm />
           </PrivateRoute>
         }/>
+        <Route path="/criarpergunta" element={
+          <PrivateRoute user={user} loading={loading}>
+            <CriarPergunta />
+          </PrivateRoute>
+        } />        
         <Route path="/perguntas/:id" element={
           <PrivateRoute user={user} loading={loading}>
             <PerguntaClicada />

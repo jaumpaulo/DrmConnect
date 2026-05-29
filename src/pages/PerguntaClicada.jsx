@@ -5,7 +5,7 @@ import PerguntaDetalhada from "../components/PerguntaDetalhada";
 import RespostasPergunta from "../components/RespostasPergunta";
 export default function PerguntaClicada(){
     const { id } = useParams()
-    const [pergunta, setPergunta] = useState(null)
+    const [pergunta, setPergunta] = useState([])
     const [respostas, setRespostas] = useState([])
     const [carregando, setCarregando] = useState(false)
 

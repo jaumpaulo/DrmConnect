@@ -32,15 +32,15 @@ export default function AjudaDrm(){
         <div className="ajudadrm-tudo">
             <div className="enviar-pergunta">
                 <h3>Crie um pergunta</h3>
-                <button onClick={() => irPara("/perguntas/criar")}>+</button>
+                <button onClick={() => irPara("/criarpergunta")}>+</button>
             </div>
             <div className="Perguntas">
                 {perguntas.map((item) => (
                     <Link 
-                    to={`/pergunta/${item.id}`}
+                    to={`/perguntas/${item.id}`}
                     key={item.id}
                     style={{ textDecoration: "none", color: 'inherit'}}>
-                        <Pergunta titulo={item.titulo} user={item.user} userAvatar={item.user_avatar}/>
+                        <Pergunta titulo={item.titulo} user={item.user_nome} userAvatar={item.user_avatar}/>
                     </Link>
                 ))}
             </div>

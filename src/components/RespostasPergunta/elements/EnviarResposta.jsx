@@ -26,7 +26,7 @@ export default function EnviarResposta({ id, funcao }){
 
     return(
         <div className="enviar-resposta">
-            <input type="text" value={descricao} placeholder="Digite um resposta"/>
+            <input type="text" value={descricao} placeholder="Digite um resposta" onChange={e => setDescricao(e.target.value)}/>
             <button onClick={() => enviarResposta()}>Enviar</button>
         </div>
     )

@@ -92,6 +92,7 @@ export default function ProblemasPagina(){
     <div>
       <button onClick={() => irPara("/home/seuUser")}>Editar perfil</button>
       <button onClick={() => irPara("/feedback")}>Feedback</button>
+      <button onClick={() => irPara("/perguntas")}>Ajuda Drm</button>
       <button onClick={() => desFazerLogin()}>Logout</button>
       <div className="form-post">
         <div className="form-text">
