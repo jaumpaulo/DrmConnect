@@ -51,8 +51,7 @@ export default function Login(){
 
     return(
         <div className="login-tudo">
-            <h1>Bem-vindo ao Problemas.com</h1>
-            <p>encontre sua solução aqui</p>
+            <h1>Login</h1>
 
             <div className="form-login">
                 <input type="text" onChange={e => setEmail(e.target.value)} placeholder="Insira seu email"/><br />

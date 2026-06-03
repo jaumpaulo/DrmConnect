@@ -11,6 +11,7 @@ import ResetSenha from "./pages/ResetSenha";
 import PerguntaClicada from "./pages/PerguntaClicada";
 import AjudaDrm from "./pages/AjudaDrm";
 import CriarPergunta from "./pages/CriarPergunta";
+import Inicial from "./pages/Inicial";
 
 export default function App(){
   const [user, setUser] = useState(null);
@@ -54,9 +55,10 @@ export default function App(){
           <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
             <p>Autenticando sessão...</p>
           </div>
-        ): user ? (<Navigate to={'/home'} replace />) : (<Login />)} />
+        ): user ? (<Navigate to={'/home'} replace />) : (<Inicial />)} />
+        <Route path="/login" element={<Login />} />
         <Route path="/cadastro" element={<Cadastro />} />
-        <Route path="resetSenha" element={<ResetSenha />} />
+        <Route path="/resetSenha" element={<ResetSenha />} />
         <Route 
           path="/home" 
           element={
