@@ -55,7 +55,7 @@ export default function Login(){
     return(
         <div className="login-tudo">
             <h1>Login</h1>
-
+        
             <div className="form-login">
                 <input type="text" onChange={e => setEmail(e.target.value)} placeholder="Insira seu email"/><br />
                 <input type="password" onChange={e => setSenha(e.target.value)} placeholder="Insira sua senha"/> <br />
