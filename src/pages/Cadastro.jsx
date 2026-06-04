@@ -57,7 +57,7 @@ export default function Cadastro(){
                 </button>
                    <p>ja tem conta? entre</p> <br />
             
-                <button onClick={() => irPara("/")}>logar</button>
+                <button onClick={() => irPara("/login")}>logar</button>
             </div>
         </div>
     )
