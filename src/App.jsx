@@ -19,34 +19,38 @@ export default function App(){
 
   useEffect(() => {
     async function carregarSessao() {
+      // tenta buscar um sessão ja exixtente
       try {
-        //oi keissu
         const { data: { session } } = await supabase.auth.getSession();
         if (session) {
-          setUser(session.user);
+          // se sim, ele guarda o Usuario e vai para verificação de token
+          setUser(session.user)
         }
       } catch (error) {
-        console.error("Erro ao carregar sessão:", error);
+        console.error("Erro ao carregar sessão:", error)
       } finally {
-        setLoading(false); // Finaliza o carregamento da sessão local
+        setLoading(false) 
       }
     }
     
-    carregarSessao();
-
+    carregarSessao()
+    //aqui ele vai escuta as mudanças de sessões e de tokens
     const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
       if (session) {
-        setUser(session.user);
-        // Limpa os tokens do Google da URL sem recarregar a página
-        window.history.replaceState({}, document.title, window.location.pathname + window.location.search);
+        //se tem uma sessão
+        setUser(session.user)
+        // ele limpa os tokens do Google da URL sem recarregar a página
+        window.history.replaceState({}, document.title, window.location.pathname + window.location.search)
+        //e guadar o token novo para enviar
       } else {
-        setUser(null);
+        setUser(null)
       }
-      setLoading(false); // Garante que o loading pare quando o Google responder
+      setLoading(false) // garante que o loading pare quando o Google responder
     });
 
-    return () => subscription.unsubscribe();
-  }, []);
+    return () => subscription.unsubscribe()
+    // aqui ele reenviar o token, independente de se é do google ou do proprio banco
+  }, [])
 
   return (
     <BrowserRouter>
@@ -95,5 +99,5 @@ export default function App(){
         }/>
       </Routes>
     </BrowserRouter>
-  );
+  )
 }

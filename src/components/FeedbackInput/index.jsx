@@ -4,11 +4,14 @@ import { useState } from "react";
 import { supabase } from "../../supabase/supabase"
 import { useNavigate } from "react-router-dom";
 import "../../styles/feedBackCSS.css"
-
+/* Componente de feedback */
 export default function FeedbackInput(){
     const [ titulo, setTitulo ] = useState("")
+    // assunto do feedback, aqui onde guardaa isso
     const [ descricao, setDescricao ] = useState("")
+    // descrição do feedback
     const [ estrelas, setEstrelas ] = useState(0)
+    // estado para amazenar as estrelas/avaliação
     const irPara = useNavigate()
 
     async function enviar(){
