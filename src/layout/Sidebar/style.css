@@ -25,3 +25,8 @@ img {
     gap: 30px;
     padding: 10px;
 }
+
+.btn.ativo {
+    background: #4f46e5;
+    color: white;
+}
