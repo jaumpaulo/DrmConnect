@@ -47,8 +47,12 @@ export default function PerguntaClicada(){
     // aq ele joga os dados em seus devido componentes
     return(
         <div className="pergunta-tudo">
-            <PerguntaDetalhada user={pergunta.user_nome} user_avatar={pergunta.user_avatar} titulo={pergunta.titulo} descricao={pergunta.descricao} />
-            <RespostasPergunta respostas={respostas} funcaoDeAtualizar={carregarDados} id={id}/>
+            <div className="pergunta">
+                <PerguntaDetalhada user={pergunta.user_nome} user_avatar={pergunta.user_avatar} titulo={pergunta.titulo} descricao={pergunta.descricao} />
+            </div>
+            <div className="resposta">
+                <RespostasPergunta respostas={respostas} funcaoDeAtualizar={carregarDados} id={id}/>
+            </div>
         </div>
     )
 }

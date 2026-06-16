@@ -29,11 +29,16 @@
     padding-left: 10px;
     background-color: rgba(22, 25, 78, 0.466);
     border-radius: 10px;
-    border: solid 1px gray;
+    border: none 1px;
 }
 
 .criarPergunta-entrada > input::placeholder {
     color: white;
+}
+
+.criarPergunta-entrada > input:focus {
+    border: 0 none;
+    outline: 0;
 }
 
 .criarPergunta-entrada > textarea {
@@ -44,6 +49,25 @@
     padding-top: 30px;
     padding-left: 20px;
     background-color: rgba(22, 25, 78, 0.466);
-    border: 1px gray solid;
+    border: 1px none;
     border-radius: 20px;
+}
+
+.criarPergunta-entrada > textarea:focus {
+    border: 0 none;
+    outline: 0;
+}
+
+.criarPergunta button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: none;
+    border-radius: 30px ;
+    margin-bottom: 300px;
+    margin-left: 500px;
+    margin-right: 500px;
+    padding: 15px;
+    background: linear-gradient(1turn, #7c3aed, #06b6d4);
+    cursor: pointer;
 }
