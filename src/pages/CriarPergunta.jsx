@@ -57,20 +57,6 @@ export default function CriarPergunta(){
           </linearGradient>
         </defs>
     </svg>
-     <svg
-        width="90"
-        height="90"
-        style={{
-          position: "absolute",
-          top: 50,
-          left: 920,
-          pointerEvents: "none",
-        }}
-      >
-        <circle cx="34" cy="45" r="3" fill="url(#grad)" />
-        <circle cx="45" cy="45" r="3" fill="url(#grad)" />
-        <circle cx="56" cy="45" r="3" fill="url(#grad)" />
-      </svg>
                 <span className="barraEsquerda"><hr /></span><MessageCircleMore size={50} stroke="url(#grad)"/><span className="barraDireita"><hr /></span>
             </div>
             <div className="criarPergunta-entrada">
