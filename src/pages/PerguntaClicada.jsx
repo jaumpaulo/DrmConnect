@@ -30,6 +30,7 @@ export default function PerguntaClicada(){
         .from("respostas")
         .select('*')
         .eq("id_pergunta", id)
+        .order("create_at", {ascending: false})
 
         if(resPergunta.error) return console.error(resPergunta.error.message);
         if(resRespostas.error) return console.error(resRespostas.error.message);
