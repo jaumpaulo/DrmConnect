@@ -61,6 +61,7 @@
     background-color: #16194e77;
     border-radius: 10px;
     border: none 1px;
+    margin-bottom: 30px;
 }
 
 .criarPergunta-entrada > input::placeholder {

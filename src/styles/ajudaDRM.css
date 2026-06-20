@@ -1,11 +1,8 @@
 .ajudadrm-tudo {
-    display: flex;
-    width: 100vw;
-    height: 100vh;
-    background: url("./../assets/background/backgroundGeral.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  background-color: #010a36;
 }
 
 .form-ajuda {
@@ -72,4 +69,20 @@
     color: white;
     font-size: 20px;
     text-align: center;
+}
+
+@media (max-width:768px) {
+    .ajudadrm-tudo{
+        display: flex;
+
+    }
+    
+    .enviar-pergunta {
+        margin: 20px;
+        margin-bottom: 20px;
+    }
+
+    .perguntas{
+        margin: 20px;
+    }
 }
